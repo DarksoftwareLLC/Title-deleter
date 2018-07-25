@@ -1,16 +1,5 @@
 #include "Includes.h"
 
-void error(const char *error)
-{
-    printf("[Title-deleter:Error] %s", error);
-    while(appletMainLoop())
-    {
-        gfxFlushBuffers();
-        gfxSwapBuffers();
-        gfxWaitForVsync();
-    }
-}
-
 int main()
 {
     gfxInitDefault();
@@ -43,7 +32,7 @@ int main()
 					{
 						printf("deleted %s!\n", id);
 					}
-					else error("Failure deleting SystemUpdater %s.\n", id);
+					else printf("Failure deleting %s.\n", id);
 				}
 			}
 			ifs.close();
